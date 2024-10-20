@@ -1,7 +1,7 @@
-package com.example.backend.Controller;
+package com.example.backend.Controller.Controllers;
 
-import com.example.backend.Model.Sale;
-import com.example.backend.Service.SaleService;
+import com.example.backend.Model.Entities.*;
+import com.example.backend.Controller.Services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,28 +16,28 @@ public class SaleController {
     @Autowired
     private SaleService saleService;
     
-    // Obtener todas las ventas
+    // Obtain all sales
     @GetMapping
     public ResponseEntity<List<Sale>> getAllSales() {
         List<Sale> sales = saleService.findAllSales();
         return ResponseEntity.ok(sales);
     }
 
-    // Obtener una venta por su ID
+    // Obtain a sale for your ID
     @GetMapping("/{id}")
     public ResponseEntity<Sale> getSaleById(@PathVariable Long id) {
         Optional<Sale> sale = saleService.findSaleById(id);
         return sale.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    // Crear una nueva venta
+    // Create a new sale
     @PostMapping
     public ResponseEntity<Sale> createSale(@RequestBody Sale sale) {
         Sale createdSale = saleService.createSale(sale);
         return ResponseEntity.ok(createdSale);
     }
 
-    // Actualizar una venta
+    // Update a sale
     @PutMapping("/{id}")
     public ResponseEntity<Sale> updateSale(@PathVariable Long id, @RequestBody Sale sale) {
         Optional<Sale> existingSale = saleService.findSaleById(id);
@@ -49,7 +49,7 @@ public class SaleController {
         }
     }
 
-    // Eliminar una venta
+    // Delete a sale
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteSale(@PathVariable Long id) {
         saleService.deleteSale(id);
