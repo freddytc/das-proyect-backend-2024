@@ -1,4 +1,4 @@
-package com.example.backend.Model;
+package com.example.backend.Model.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;

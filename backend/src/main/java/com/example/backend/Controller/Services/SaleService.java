@@ -1,7 +1,7 @@
-package com.example.backend.Service;
+package com.example.backend.Controller.Services;
 
-import com.example.backend.Model.Sale;
-import com.example.backend.Repository.SaleRepository;
+import com.example.backend.Model.Entities.*;
+import com.example.backend.Model.Repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
