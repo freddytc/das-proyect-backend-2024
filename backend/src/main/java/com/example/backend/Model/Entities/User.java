@@ -16,7 +16,7 @@ public class User {
     private String username;
 
     @Column(nullable = false)
-    private String password; // Recuerda encriptar las contraseñas
+    private String password;
 
     @Column(nullable = false, unique = true, length = 100)
     private String email;
