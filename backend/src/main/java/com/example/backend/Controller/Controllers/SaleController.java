@@ -1,7 +1,7 @@
 package com.example.backend.Controller.Controllers;
 
-import com.example.backend.Model.Entities.*;
-import com.example.backend.Controller.Services.*;
+import com.example.backend.Model.Entities.Sale;
+import com.example.backend.Controller.Services.SaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +23,7 @@ public class SaleController {
         return ResponseEntity.ok(sales);
     }
 
-    // Obtain a sale for your ID
+    // Get a sale for your ID
     @GetMapping("/{id}")
     public ResponseEntity<Sale> getSaleById(@PathVariable Long id) {
         Optional<Sale> sale = saleService.findSaleById(id);

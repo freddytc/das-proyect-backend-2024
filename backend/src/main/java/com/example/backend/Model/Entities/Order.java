@@ -28,7 +28,7 @@ public class Order {
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 
-    // Default constructor
+
     public Order() {
         this.createdAt = LocalDateTime.now();
     }
