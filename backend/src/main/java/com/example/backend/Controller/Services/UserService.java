@@ -29,7 +29,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    // Update user
+    // Update a user
     public Optional<User> updateUser(Long id, User userDetails) {
         return userRepository.findById(id).map(user -> {
             user.setUsername(userDetails.getUsername());
@@ -39,7 +39,7 @@ public class UserService {
         });
     }
 
-    // Delete a user by ID
+    // Delete a user
     public boolean deleteUser(Long id) {
         if (userRepository.existsById(id)) {
             userRepository.deleteById(id);

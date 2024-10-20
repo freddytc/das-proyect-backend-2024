@@ -1,4 +1,3 @@
-
 package com.example.backend.Model.Entities;
 
 import jakarta.persistence.*;
@@ -16,7 +15,7 @@ public class User {
     private String username;
 
     @Column(nullable = false)
-    private String password;
+    private String password; 
 
     @Column(nullable = false, unique = true, length = 100)
     private String email;

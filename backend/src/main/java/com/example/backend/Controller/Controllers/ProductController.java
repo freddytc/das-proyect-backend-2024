@@ -1,6 +1,6 @@
 package com.example.backend.Controller.Controllers;
 
-import com.example.backend.Model.Entities.*;
+import com.example.backend.Model.Entities.Product;
 import com.example.backend.Controller.Services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +23,7 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
-    // Obtain a product by its ID
+    // Get a product by ID
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Long id) {
         Optional<Product> product = productService.getProductById(id);
@@ -36,7 +36,7 @@ public class ProductController {
         return productService.saveOrUpdateProduct(product);
     }
 
-    // Delete a product by its ID.
+    // Delete a product by its ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
         try {
